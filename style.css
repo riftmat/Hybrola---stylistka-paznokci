@@ -6,7 +6,7 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 0; 
-    background-color: rgb(255, 254, 251);
+    background-color: rgb(238, 236, 232);
     min-height: 100vh;
     display: flex;
     flex-direction: column
@@ -27,6 +27,7 @@ main {
     justify-content: flex-start;
     position: fixed;
     width: 100%;
+    z-index: +1;
 }
 
 .nav a {
@@ -55,6 +56,14 @@ nav a:hover {
     margin-top: 8vh;
 }
 
+.wiz div {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+}
+
 .wiz p {
     border-top: solid 3px rgb(241, 232, 201);
     font-size: 22px;
@@ -66,6 +75,10 @@ nav a:hover {
     font-size: 28px;
     font-weight: 600;
     color: rgb(78, 73, 55);
+}
+
+.wiz img {
+    margin-left: 10px;
 }
 
 .off {
@@ -84,26 +97,47 @@ h1 {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    margin-top: 5vh;
     align-items: center;
 }
 
 .opis span {
-    max-width: 90%;
+    max-width: 60%;
     text-align: center;
     border-left: solid 3px rgb(241, 232, 201);
     border-right: solid 3px rgb(241, 232, 201);
     padding: 0 1vw 0 1vw;
+    margin-top: 2vh;
+    margin-left: 1vw;
 }
 
-.opis div {
+.op {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+.opis img {
+    margin: 1vh 0 1vh 0;
+    max-width: 300px;
+    border-radius: 5px;
+    border: solid 3px;
+}
+
+.imp {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+h2 {
+    border-top: solid 3px rgb(241, 232, 201);
+    margin-top: 5vh;
+}
+
 footer {
-    background: hsla(0, 0%, 0%, 0.9);
+    background: rgba(0, 0, 0, 0.9);
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -119,11 +153,17 @@ footer p {
     margin-left: 3vw;
 }
 
+footer b {
+    color: rgb(211, 211, 211);
+}
+
 li {
     list-style:circle;
 }
 
 .socialmedia img {
+    background: rgb(241, 232, 201);
+    border-radius: 5px;
     padding: 5px;
     transition: 0.5s;
 }
@@ -133,7 +173,72 @@ li {
     scale: 1.5;
 }
 
+.portfolio {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15vh;
+}
 
+.portfolio img {
+    max-width: 40vw;
+    max-height: 40vh;
+    object-fit: contain;
+}
+
+.pp{
+    position:relative;
+    cursor: pointer;
+}
+
+.pp .overlay {
+    position:absolute;
+    bottom: 4px;
+    right: 0;
+    left: 0;
+    height: 99%;
+    width:0;
+    background-color: rgb(241, 232, 201);
+    opacity: 0.9;
+    overflow: hidden;
+    transition:0.5s;
+}
+
+.pp:hover .overlay{
+    width: 100%;
+}
+
+.overlay h3{
+    position:absolute;
+    color: black;
+    font-size: 1.5rem;
+    top:40%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+
+.wizytow {
+    text-align: center;
+    background: rgba(0, 0, 0, 0.9);
+    color: aliceblue;
+    font-size: 12px;
+}
+
+.wizytow a {
+    text-decoration: none;
+    color: whitesmoke;
+    font-size: 12px;
+    margin-left: 2px;
+}
+
+.zapro {
+    text-align: center;
+    max-width: 60%;
+}
 
 @media only screen and (max-width: 345px) {
     footer {
@@ -145,9 +250,11 @@ li {
     .wiz p, a {
         text-align: center;
     }
-}
 
-@media only screen and (max-width: 474px) {
+    .overlay h3 {
+        font-size: 0.8rem;
+    }
+
     nav {
         display: flex;
         flex-direction: column;
@@ -175,6 +282,49 @@ li {
         max-width: 90%;
         text-align: center;
     }
+
+    .opis img {
+        max-width: 40vw;
+    }
+}
+
+@media only screen and (min-width: 346px) and (max-width: 534px) {
+    nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        align-items: center;
+    }
+    
+    .nav a {
+        margin-top: 0.5vh;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    main {
+        margin-top: 22vh;
+    }
+
+    h2 {
+        max-width: 90%;
+        text-align: center;
+    }
+
+    .opis img {
+        max-width: 40vw;
+    }
+
+    .overlay h3 {
+        font-size: 1rem;
+    }
+    
 }
 
 @media only screen and (min-width: 1600px) {
